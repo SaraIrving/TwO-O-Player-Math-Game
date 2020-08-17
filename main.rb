@@ -41,9 +41,10 @@ while player3.lives > 0 && player4.lives > 0
   which_player_turn = turn.determineWhosTurn
   puts "Player #{which_player_turn}: #{question.genertateQuestion}"
   print "> "
-  answer = gets.chomp 
+  answer = gets.chomp.to_i 
   puts answer
-  
+  validation = question.validateAnswer(answer, which_player_turn)
+  puts validation
   turn.turnHistory << which_player_turn
   puts "end of this iteration of the loop"
 end
