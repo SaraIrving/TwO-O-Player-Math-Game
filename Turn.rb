@@ -2,13 +2,21 @@
 
 class Turn
 
-  def determineWhosTurn(player_1_bool, player_2_bool)
-    if player_1_bool == true && player_2_bool == true
+  attr_accessor :turnHistory
+  
+  def initialize
+    @turnHistory = []
+  end
+  
+
+  def determineWhosTurn
+
+    if @turnHistory.length == 0 
       return 1
-    elsif player_1_bool == true
+    elsif @turnHistory.last == 1
       return 2
-    else 
-      return 1
+    else
+      return 1 
     end
 
   end
