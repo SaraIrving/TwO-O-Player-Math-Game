@@ -20,8 +20,6 @@ while player1.lives > 0 && player2.lives > 0
   print "> "
   answer = gets.chomp.to_i 
 
-  puts answer
-
   validation = question.validateAnswer(answer, which_player_turn)
   puts validation[0]
 
