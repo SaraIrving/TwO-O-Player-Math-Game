@@ -2,7 +2,7 @@
 
 class Player 
   
-  attr_accessor :name
+  attr_writer :name
   attr_reader :lives
 
   def initialize(name)
@@ -17,7 +17,7 @@ class Player
   def inspect
     "Player - name: #{name}, lives: #{lives}"
   end
-  
+
 
 
 
