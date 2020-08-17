@@ -3,34 +3,7 @@ require "./Question"
 require "./Turn"
 require "./Game"
 
-=begin
-# tests for Player Class
-player1 = Player.new("Player1")
-puts player1.name
-puts player1.lives
-player1.decreaseLives
-puts player1.lives
 
-player2 = Player.new("Player2")
-
-# tests for Question Class
-ques = Question.new
-puts ques.genertateQuestion
-
-# tests for Turn Class
-turn = Turn.new 
-whoTurn = turn.determineWhosTurn
-puts whoTurn
-turn.turnHistory << 1
-nextTurn = turn.determineWhosTurn
-puts nextTurn
-#tests for Game Class 
-
-=end
-
-
-
-# set up app flow:
 
 player1 = Player.new("Player1")
 player2 = Player.new("Player2")
