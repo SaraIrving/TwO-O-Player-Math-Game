@@ -3,25 +3,34 @@
 Class Nouns: Player, Game, Turn, Question
 
 Player:
-- will store lives for the player as an instance variable, initially set to 3
-- will have methods to get and set the lives
-- will store turn instance variable as a boolean representing if it is the players turn
-- will have methods to get and set the turn variable
+- will have instance variables:
+    -lives: initially set to 3
+    -name: set to whatever argument is passed in when the class is instantiated
+- will have methods to get the lives 
+- will have a method to reduce the lives by 1
+- will have methods to set the name 
 
 
-Turn:
-- will determine which Players turn it is (check at the start of each round, whoever is  true at the start of the round(means they played the last round), say that it is the other player's turn)
-    -if both players turn variables are set to false(should be this way at the start of a new game), make it player 1's turn 
+
+Turn: 
+-will have an instance variable:
+    - turnHistory: an array of the previous turns to detemine who's turn it is and the history?
+- will have a method:
+    - to update turnHistory
+    - determine who's turn: which checks if the turnHistory array is empty(if it is that means no turns have happened so it sets Player 1 as the first one to have a turn), if the array length is not zero, then it check the player who was last in the history and sets the current player to be the other one
 
 
 Question:
-- will be instantiated with two arguments, numbers between 1-20, which it will use to generate a simple addition question
-- will have 2 instance variables that represent the two number arguments (these could be used elsewhere to validate the answer??)
+- will have 2 instance variables equal to two randomly generated numbers between 1 and 20
+- will have methods:
+    - to see what each of the numbers are
+    - to return a question in the form of a string incorporating the two numbers
+
 
 
 Game:
--will have a method to determine when the game is over by tracking the lives of the players until one of them is 0
-  - use the output of this method as the condition on the loop
+-will have a method to check the game status which will take in the lives each player has left and output the correct responses to display to the user 
+
 
 App Flow:
 - define classes
@@ -55,6 +64,9 @@ App Flow:
         - use the local variable that stores which player is currently playing as a substiture for the Player class name and then call the .decreaseLives function for that Player (which will decrement their lives instance variable)
 
     - puts out the game.method that will display the congrats or error message to the terminal based on the value of the outcome instance variable 
+
+- after loop:
+  - puts the winner message, game over message, goodbye message
 
 =end
 
