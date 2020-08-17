@@ -13,4 +13,14 @@ class Question
     "What is #{@num1} + #{@num2}?"
   end
   
+  def validateAnswer(answer, player)
+    if answer.to_i == @num1 + @num2
+      return "Player #{player}: YES! You are correct."
+    else 
+      return "Player #{player}: Seriously? No!"
+    end
+  end
+
+
+
 end
