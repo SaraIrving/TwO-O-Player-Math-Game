@@ -35,17 +35,37 @@ puts nextTurn
 player3 = Player.new("Player3")
 player4 = Player.new("Player4")
 turn = Turn.new
+game = Game.new
 
 while player3.lives > 0 && player4.lives > 0
   question = Question.new
+
   which_player_turn = turn.determineWhosTurn
+
   puts "Player #{which_player_turn}: #{question.genertateQuestion}"
+
   print "> "
   answer = gets.chomp.to_i 
+
   puts answer
+
   validation = question.validateAnswer(answer, which_player_turn)
-  puts validation
+  puts validation[0]
+
+  if validation.last == false
+
+    if which_player_turn == 1
+      player3.decreaseLives
+    else 
+      player4.decreaseLives
+    end
+
+  end
+
+  puts game.checkGameStatus(player3.lives, player4.lives)
+
   turn.turnHistory << which_player_turn
+
   puts "end of this iteration of the loop"
 end
 
