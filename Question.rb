@@ -15,9 +15,9 @@ class Question
   
   def validateAnswer(answer, player)
     if answer == @num1 + @num2
-      return "Player #{player}: YES! You are correct."
+      return ["Player #{player}: YES! You are correct.", true]
     else 
-      return "Player #{player}: Seriously? No!"
+      return ["Player #{player}: Seriously? No!", false]
     end
   end
 
