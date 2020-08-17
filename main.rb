@@ -32,12 +32,12 @@ puts nextTurn
 
 # set up app flow:
 
-player3 = Player.new("Player3")
-player4 = Player.new("Player4")
+player1 = Player.new("Player1")
+player2 = Player.new("Player2")
 turn = Turn.new
 game = Game.new
 
-while player3.lives > 0 && player4.lives > 0
+while player1.lives > 0 && player2.lives > 0
   question = Question.new
 
   which_player_turn = turn.determineWhosTurn
@@ -55,18 +55,17 @@ while player3.lives > 0 && player4.lives > 0
   if validation.last == false
 
     if which_player_turn == 1
-      player3.decreaseLives
+      player1.decreaseLives
     else 
-      player4.decreaseLives
+      player2.decreaseLives
     end
 
   end
 
-  puts game.checkGameStatus(player3.lives, player4.lives)
+  puts game.checkGameStatus(player1.lives, player2.lives)
 
   turn.turnHistory << which_player_turn
 
-  puts "end of this iteration of the loop"
 end
 
 
